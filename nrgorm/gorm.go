@@ -2,6 +2,7 @@ package nrgorm
 
 import (
 	"fmt"
+	"os"
 	"strings"
 
 	"github.com/jinzhu/gorm"
@@ -23,7 +24,7 @@ func SetTxnToGorm(txn newrelic.Transaction, db *gorm.DB) *gorm.DB {
 
 // AddGormCallbacks adds callbacks to NewRelic, you should call SetTxnToGorm to make them work
 func AddGormCallbacks(db *gorm.DB) {
-	dialect := db.Dialect().GetName()
+	dialect := os.Getenv("GORM_DIALECT")
 	var product newrelic.DatastoreProduct
 	switch dialect {
 	case "postgres":
