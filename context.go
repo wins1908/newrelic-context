@@ -5,8 +5,8 @@ import (
 
 	"github.com/jinzhu/gorm"
 	"github.com/newrelic/go-agent"
-	"github.com/smacker/newrelic-context/nrgorm"
-	"github.com/smacker/newrelic-context/nrredis"
+	"github.com/wins1908/newrelic-context/nrgorm"
+	"github.com/wins1908/newrelic-context/nrredis"
 	redis "gopkg.in/redis.v5"
 )
 
